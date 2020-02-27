@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,15 +8,55 @@ function Footer(){
   );
 }
 
-function Body(){
+
+function Greeting(props){
+
+  const [name, setName] = useState('Mary');
+  const [surname, setSurname] = useState('Poppins');
+  const width = useWindowWidth();
+
+
+  function handleNameChenge(e){
+    setName(e.target.value);
+  }
+  function handleSurnameChenge(e){
+    setSurname(e.target.value);
+
+  }
+  useEffect(()=>{
+    document.title = name + " " + surname;
+  });
+
   return (
-    <body>Body will by heare</body>
-  )
+    <section>
+      <label>
+       Name:
+        <input
+          type ="text"
+          value= {name}
+          onChange = {handleNameChenge}
+         />
+      </label>
+      <label>
+       Surname:
+        <input
+          type ="text"
+          value= {surname}
+          onChange = {handleSurnameChenge}
+         />
+      </label>
+      <label>
+       Width:
+        {width}
+      </label>
+    </section>
+  );
+
 }
 
-function App() {
+function App(props) {
   return (
-
+    <>
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
@@ -32,18 +72,32 @@ function App() {
           Learn React
         </a>
       </header>
-        <body className="App-body">
-          <p>
-            <Body/>
-          </p>
-        </body>
-      <footer className="App-footer">
-            <Footer/>
-      </footer>
+
+
     </div>
 
+      <div className="App-body">
+            <Greeting/>
+      </div>
+
+    <footer className="App-footer">
+          <Footer/>
+    </footer>
+</>
   );
 
+}
+
+function useWindowWidth(){
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(()=>{
+    const handlResize =() => setWidth(window.innerWidth);
+    window.addEventListener('resize', handlResize);
+    return ()=>{
+      window.removeEventListener('resize', handlResize);
+    };
+  });
+return width;
 }
 
 export default App;
