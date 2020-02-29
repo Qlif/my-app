@@ -1,7 +1,6 @@
 //Core
-import React from 'react';
-import Axis from 'axis';
-
+import React, { useState, useEffect } from 'react';
+import Axios from 'axios';
 //Style
 import './App.css';
 //Components
@@ -11,6 +10,28 @@ import Main from './components/main/Main.js';
 
 //Get data from server
 function App() {
+
+const [data, resivData] = useState('');
+
+
+useEffect( ()=> {Axios.get('http://localhost:3001/posts')
+    .then(function (response) {
+      // handle success
+      resivData(response.data);
+      //console.log(data);
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    })
+    .finally(function () {
+      // always executed
+    });
+
+}, [data]);
+
+console.log(data);
+
   return (
     <div className="App">
       <Header/>
