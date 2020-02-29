@@ -4,9 +4,7 @@ import TodoListItem from '../todolistitem/TodoListItem.js'
 function TodoList(){
   return(
     <ul>
-      <TodoListItem/>
-      <TodoListItem/>
-      <TodoListItem/>
+      <TodoListItem/>    
     </ul>
   );
 }

@@ -1,16 +1,15 @@
+//Core
 import React from 'react';
+import Axis from 'axis';
 
+//Style
 import './App.css';
+//Components
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
 import Main from './components/main/Main.js';
 
-
-function Todolist (){
-  return (
-  <footer>Some headet </footer>)
-}
-
+//Get data from server
 function App() {
   return (
     <div className="App">

@@ -1,8 +1,10 @@
-import React from 'react';
+import React  from 'react';
+
+//const [data, setData] = >
 
 function TodoListItem(){
   return(
-    <someitem> Some item </someitem>
+    <li> Some item </li>
   );
 }
 
