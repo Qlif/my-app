@@ -12,9 +12,10 @@ import Main from './components/main/Main.js';
 function App() {
 
 const [data, resivData] = useState('');
+const main = Main(data);
 
-
-useEffect( ()=> {Axios.get('http://localhost:3001/posts')
+useEffect( ()=> {
+  Axios.get('http://localhost:3001/posts')
     .then(function (response) {
       // handle success
       resivData(response.data);
@@ -28,15 +29,17 @@ useEffect( ()=> {Axios.get('http://localhost:3001/posts')
       // always executed
     });
 
-}, [data]);
+}, []);
 
-console.log(data);
+//console.log(data);
+
+
 
   return (
     <div className="App">
-      <Header/>
-      <Main/>
-      <Footer/>
+      <Header />
+      {main}
+      <Footer />
     </div>
   );
 }

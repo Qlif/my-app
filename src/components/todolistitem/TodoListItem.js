@@ -1,10 +1,11 @@
 import React  from 'react';
 
-//const [data, setData] = >
+function TodoListItem(item){
+//console.log(data);
+let listItem = <li key={item.id.toString()}> {item.title}</li>;
 
-function TodoListItem(){
   return(
-    <li> Some item </li>
+    listItem
   );
 }
 

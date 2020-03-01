@@ -3,12 +3,13 @@ import React from 'react';
 //components
 import Todolist from '../todolist/TodoList.js'
 
-function Main (){
+function Main (data){
+  const todolist = Todolist (data);
+  //console.log("From main");
+  //console.log(data);
   return(
-    <main>
-          <Todolist/>
-    </main>
-  )
+    todolist
+  );
 }
 
 export default Main;
