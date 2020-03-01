@@ -1,17 +1,10 @@
 import React from 'react';
 import TodoListItem from '../todolistitem/TodoListItem.js'
 
-function TodoList(data){
-
-    let todoListItems = [];
-
-  for(let item of data){
-    todoListItems = TodoListItem(item);
-    //console.log(item);
-  }
+function TodoList(props){
 return(
   <ul>
-    {todoListItems}
+    <TodoListItem value= {props.value} />
   </ul>
   );
 }

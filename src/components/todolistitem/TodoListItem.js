@@ -1,12 +1,13 @@
 import React  from 'react';
 
-function TodoListItem(item){
-//console.log(data);
-let listItem = <li key={item.id.toString()}> {item.title}</li>;
+function TodoListItem(props){
+  let data = props.value
 
-  return(
-    listItem
-  );
+  if(props.value){
+    return(data.map((item) => <li key={item.id.toString()}> {item.title}</li>))      
+  }else {
+    return( <li />)
+  }
 }
 
 export default TodoListItem;

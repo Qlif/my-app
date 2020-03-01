@@ -11,8 +11,7 @@ import Main from './components/main/Main.js';
 //Get data from server
 function App() {
 
-const [data, resivData] = useState('');
-const main = Main(data);
+const [data, resivData] = useState([]);
 
 useEffect( ()=> {
   Axios.get('http://localhost:3001/posts')
@@ -31,14 +30,10 @@ useEffect( ()=> {
 
 }, []);
 
-//console.log(data);
-
-
-
   return (
     <div className="App">
       <Header />
-      {main}
+      <Main value= {data} />
       <Footer />
     </div>
   );
