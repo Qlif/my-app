@@ -1,5 +1,6 @@
 //Core
 import React  from 'react';
+import PropTypes from 'prop-types';
 
 function TodoListItem(props){
   let data = props.value
@@ -11,4 +12,7 @@ function TodoListItem(props){
   }
 }
 
+TodoListItem.propTypes = {
+  data: PropTypes.array
+};
 export default TodoListItem;
