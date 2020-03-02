@@ -1,4 +1,6 @@
+//Core
 import React from 'react';
+//Components
 import TodoListItem from '../todolistitem/TodoListItem.js'
 
 function TodoList(props){
