@@ -15,4 +15,11 @@ function TodoListItem(props){
 TodoListItem.propTypes = {
   data: PropTypes.array
 };
+
+TodoListItem.defaultProps = {
+  data: {
+    'id' : 0,
+    'title' : 'Title'
+  }
+};
 export default TodoListItem;
