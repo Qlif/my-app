@@ -1,8 +1,24 @@
 {
   "posts": [
-    { "id": 1, "title": "Install json-server", "stat": "true" },
-    { "id": 2, "title": "Taste Callback hell", "stat": "false" },
-    { "id": 3, "title": "No pain, no growth", "stat": "true" },
-    { "id": 4, "title": "Try to not crye", "stat": "true" }
+    {
+      "id": 1,
+      "title": "Install json-server",
+      "stat": "true"
+    },
+    {
+      "id": 2,
+      "title": "Taste Callback hell",
+      "stat": "false"
+    },
+    {
+      "id": 3,
+      "title": "No pain, no growth",
+      "stat": "true"
+    },
+    {
+      "id": 4,
+      "title": "Try to not crye",
+      "stat": "true"
+    }
   ]
 }

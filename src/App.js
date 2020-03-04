@@ -1,6 +1,8 @@
 //Core
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+//Api
+import Api from './engine/services/api/index.js'
+//import Axios from 'axios';
 //Style
 import './App.css';
 //Components
@@ -13,8 +15,9 @@ function App() {
 
 const [data, resivData] = useState([]);
 
-useEffect( ()=> {
-  Axios.get('http://localhost:3001/posts')
+//Get data from server
+useEffect(()=> {
+  Api.getRequest()
     .then(function (response) {
       // handle success
       resivData(response.data);
@@ -29,7 +32,7 @@ useEffect( ()=> {
     });
 
 }, []);
-
+//console.log(data);
   return (
     <div className="App">
       <Header />
