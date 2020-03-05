@@ -18,11 +18,11 @@ class Api {
   }
 
 //Action Add
-  postRequest() {
+  postRequest(title, status) {
       this.http.post('/posts', {
       id: '',
-      title : "Teeaegye",
-      stat : "true"
+      title : title,
+      stat : status
     })
     .then(function (response) {
       console.log(response);
@@ -49,8 +49,6 @@ class Api {
   });
   }
 
-
-  // TODO: add your own api methods here
 }
 
 export default Api.getInstance();

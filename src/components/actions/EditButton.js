@@ -30,13 +30,9 @@ Modal.setAppElement('#root')
 //     />
 //   );
 // }
-function ButtonDelete (props){
+function ButtonEdit (props){
+const [itemtitle, setItemTitle] = useState(props.itemtitle);
 
-const delid = props.delid;
-const actionDel = (e) =>{
-  Api.delRequest(delid);
-  setIsOpen(false);
-}
 var subtitle;
   const [modalIsOpen,setIsOpen] = useState(false);
   function openModal() {
@@ -53,7 +49,7 @@ var subtitle;
 
     return (
       <div>
-        <button onClick={openModal}>Delete</button>
+        <button onClick={openModal}>Edit</button>
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -61,12 +57,13 @@ var subtitle;
           style={customStyles}
           contentLabel="Example Modal"
         >
-          <h2>Are you sure you want to delete?</h2>
-          <button onClick = {actionDel}>Yes</button>
-          <button onClick={closeModal}>No</button>
+
+          <input type = "text" value = {itemtitle} />
+          <button onClick = "">Apply</button>
+          <button onClick={closeModal}>Cancel</button>
 
         </Modal>
       </div>
     );
 }
-export default ButtonDelete;
+export default ButtonEdit;

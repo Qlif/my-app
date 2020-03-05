@@ -3,6 +3,7 @@ import React  from 'react';
 import PropTypes from 'prop-types';
 //components
 import ButtonDelete from '../actions/ButtonDelete.js';
+import ButtonEdit from '../actions/EditButton.js';
 
 function TodoListItem(props) {
   const data = props.value
@@ -10,8 +11,7 @@ function TodoListItem(props) {
   if(props.value){
     return(data.map((item) =>
         <li key={item.id.toString()}>
-          {item.title}
-          <ButtonDelete delid = {item.id} />
+          {item.title}<ButtonDelete delid = {item.id} /> <ButtonEdit itemid = {item.id} itemtitle = {item.title}  />
         </li>))
   }
     return null;
