@@ -6,7 +6,7 @@ import Api from '../../engine/services/api/index.js';
 function AddTodoItem (props){
 
 const [title, setTitle] = useState('')
-const [satus, setSatus] = useState('false')
+const [satus, setSatus] = useState(false)
 
 
 const handleChangeUsername = e => {

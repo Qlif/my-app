@@ -9,9 +9,12 @@ function TodoListItem(props) {
   const data = props.value
 
   if(props.value){
+
     return(data.map((item) =>
         <li key={item.id.toString()}>
-          {item.title}<ButtonDelete delid = {item.id} /> <ButtonEdit itemid = {item.id} itemtitle = {item.title}  />
+          {item.title} Status : {(item.stat === true ? "Done" : "Not done")}
+           <ButtonDelete delid = {item.id} />
+           <ButtonEdit itemid = {item.id} itemtitle = {item.title}  />
         </li>))
   }
     return null;

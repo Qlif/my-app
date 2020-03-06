@@ -16,25 +16,16 @@ const customStyles = {
   }
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root')
-// function ButtonDelete (props){
-//   const actionDel = (e) =>{Api.delRequest(delid);}
-//   const delid = props.delid;
-//   return(
-//     <input
-//       type = "button"
-//       value = "Delete"
-//       delid = {delid}
-//       onClick = {actionDel}
-//     />
-//   );
-// }
-function ButtonEdit (props){
-const [itemtitle, setItemTitle] = useState(props.itemtitle);
 
-var subtitle;
+function ButtonEdit (props){
+
+  const [itemtitle, setItemTitle] = useState(props.itemtitle);
+  const [satus, setSatus] = useState(props.stat)
+  var subtitle;
+
   const [modalIsOpen,setIsOpen] = useState(false);
+
   function openModal() {
     setIsOpen(true);
   }
@@ -46,6 +37,10 @@ var subtitle;
   function closeModal(){
     setIsOpen(false);
   }
+
+  const handleonClikStatus = e => {
+      setSatus(true)
+      }
 
     return (
       <div>
@@ -59,6 +54,7 @@ var subtitle;
         >
 
           <input type = "text" value = {itemtitle} />
+          <input type = "checkbox" id="satus" name="satus" cheked />
           <button onClick = "">Apply</button>
           <button onClick={closeModal}>Cancel</button>
 
