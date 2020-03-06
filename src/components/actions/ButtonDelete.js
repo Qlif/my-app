@@ -16,20 +16,8 @@ const customStyles = {
   }
 };
 
-// Make sure to bind modal to your appElement (http://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement('#root')
-// function ButtonDelete (props){
-//   const actionDel = (e) =>{Api.delRequest(delid);}
-//   const delid = props.delid;
-//   return(
-//     <input
-//       type = "button"
-//       value = "Delete"
-//       delid = {delid}
-//       onClick = {actionDel}
-//     />
-//   );
-// }
+
 function ButtonDelete (props){
 
 const delid = props.delid;

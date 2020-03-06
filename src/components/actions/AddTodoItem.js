@@ -11,10 +11,11 @@ const [satus, setSatus] = useState(false)
 
 const handleChangeUsername = e => {
     setTitle(e.target.value)
-    }
+  };
+  
 const handleonClikStatus = e => {
     setSatus(true)
-    }
+  };
 
  const onFormSubmit = ev => {
     ev.preventDefault();
