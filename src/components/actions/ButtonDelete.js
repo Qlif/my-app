@@ -19,10 +19,14 @@ const customStyles = {
 Modal.setAppElement('#root')
 
 function ButtonDelete (props){
-
+  const { getData } = props;
 const delid = props.delid;
 const actionDel = (e) =>{
-  Api.delRequest(delid);
+  Api.delRequest(delid)
+    .then(() => Api.getRequest())
+    .then((res) => {
+      getData(res.data);
+    });
   setIsOpen(false);
 }
 var subtitle;

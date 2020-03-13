@@ -5,9 +5,10 @@ import PropTypes from 'prop-types';
 import TodoListItem from '../todolistitem/TodoListItem.js'
 
 function TodoList(props){
+  const { getData } = props;
 return(
   <ul>
-    <TodoListItem value= {props.value} />
+    <TodoListItem value= {props.value} getData={getData} />
   </ul>
   );
 }

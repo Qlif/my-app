@@ -8,10 +8,11 @@ import Todolist from '../todolist/TodoList.js';
 import AddTodoItem from '../actions/AddTodoItem.js';
 
 function Main (props){
+  const { getData } = props;
   return(
     <>
     <AddTodoItem />
-    <Todolist value = {props.value} />
+    <Todolist value = {props.value} getData={getData} />
     </>
   );
 }

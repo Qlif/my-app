@@ -36,7 +36,7 @@ class Api {
 
   delRequest(delid){
 
-    this.http.delete('/posts/'+delid, {
+    return this.http.delete('/posts/'+delid, {
     })
   .then(function (response) {
     console.log(response);
