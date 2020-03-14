@@ -6,10 +6,9 @@ import ButtonDelete from '../actions/ButtonDelete.js';
 import ButtonEdit from '../actions/EditButton.js';
 
 function TodoListItem(props) {
-  const { getData } = props;
-  const data = props.value
+  const { getData, data } = props;
 
-  if(props.value){
+  if(data){
 
     return(data.map((item) =>
         <li key={item.id.toString()}>

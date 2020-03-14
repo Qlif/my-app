@@ -36,7 +36,7 @@ useEffect(()=> {
   return (
     <div className="App">
       <Header />
-      <Main value= {data} getData={resivData} />
+      <Main data= {data} getData={resivData} />
       <Footer />
     </div>
   );
