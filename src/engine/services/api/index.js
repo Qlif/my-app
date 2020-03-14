@@ -13,42 +13,39 @@ class Api {
     return Api.instance;
   }
 
+//Action getData
   getRequest() {
     return this.http.get('/posts');
   }
 
 //Action Add
   postRequest(title, status) {
-      this.http.post('/posts', {
-      id: '',
-      title : title,
-      stat : status
-    })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+
+    return  this.http.post('/posts', {
+            id: '',
+            title : title,
+            stat : status
+          })
+          .catch(function (error) {
+            console.log(error);
+          });
   }
 
 //Actin Delete
-
   delRequest(delid){
 
     return this.http.delete('/posts/'+delid, {
-    })
-  .then(function (response) {
-    console.log(response);
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-  .then(function () {
-    // always executed
-  });
+           })
+          .then(function (response) {
+            console.log(response);
+          })
+          .catch(function (error) {
+            console.log(error);
+          })
+          .then(function () {
+            // always executed
+          });
+          }
   }
-
-}
 
 export default Api.getInstance();

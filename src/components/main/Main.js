@@ -11,7 +11,7 @@ function Main (props){
   const { getData, data } = props;
   return(
     <>
-    <AddTodoItem />
+    <AddTodoItem getData={getData} />
     <Todolist data = {data} getData={getData} />
     </>
   );

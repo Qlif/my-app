@@ -20,8 +20,7 @@ useEffect(()=> {
   Api.getRequest()
     .then(function (response) {
       // handle success
-      resivData(response.data);
-      //console.log(data);
+      resivData(response.data);      
     })
     .catch(function (error) {
       // handle error
