@@ -1,6 +1,6 @@
 //Core
 import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
+//import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 //Api
 import Api from '../../engine/services/api/index.js';
@@ -29,7 +29,6 @@ const actionDel = (e) =>{
     });
   setIsOpen(false);
 }
-var subtitle;
   const [modalIsOpen,setIsOpen] = useState(false);
   function openModal() {
     setIsOpen(true);
