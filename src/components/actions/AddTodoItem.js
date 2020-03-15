@@ -15,7 +15,7 @@ const handleChangeUsername = e => {
   };
 
 const handleonClikStatus = e => {
-    setSatus(true)
+      setSatus(e.target.checked);
   };
 
  const onFormSubmit = ev => {
@@ -35,7 +35,7 @@ const handleonClikStatus = e => {
       <input type = "checkbox"
              id="satus"
              name="satus"
-             onChange ={handleonClikStatus}             
+             onChange ={handleonClikStatus}
       />
       <label> Done </label>
       <button type = "submit"> Send </button>
