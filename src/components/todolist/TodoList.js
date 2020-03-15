@@ -7,9 +7,7 @@ import TodoListItem from '../todolistitem/TodoListItem.js'
 function TodoList(props){
   const { getData, data } = props;
 return(
-  <ul>
-    <TodoListItem data= {data} getData={getData} />
-  </ul>
+    <TodoListItem data= {data} getData={getData} />  
   );
 }
 

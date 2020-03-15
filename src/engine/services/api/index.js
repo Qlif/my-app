@@ -37,15 +37,13 @@ class Api {
     return this.http.delete('/posts/'+delid, {
            })
           .then(function (response) {
-            console.log(response);
+
           })
           .catch(function (error) {
             console.log(error);
           })
-          .then(function () {
-            // always executed
-          });
-          }
+
   }
+}
 
 export default Api.getInstance();

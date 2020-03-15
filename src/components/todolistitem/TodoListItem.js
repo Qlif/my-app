@@ -11,11 +11,11 @@ function TodoListItem(props) {
   if(data){
 
     return(data.map((item) =>
-        <li key={item.id.toString()}>
+        <div key={item.id.toString()}>
           {item.title} Status : {(item.stat === true ? "Done" : "Not done")}
            <ButtonDelete delid = {item.id} getData={getData} />
            <ButtonEdit itemid = {item.id} itemtitle = {item.title}  />
-        </li>))
+        </div>))
   }
     return null;
 }

@@ -18,18 +18,14 @@ const [data, resivData] = useState([]);
 //Get data from server
 useEffect(()=> {
   Api.getRequest()
-    .then(function (response) {
+    .then((response) => {
       // handle success
-      resivData(response.data);      
+      resivData(response.data);
     })
-    .catch(function (error) {
+    .catch((error) => {
       // handle error
       console.log(error);
     })
-    .finally(function () {
-      // always executed
-    });
-
 }, []);
 //console.log(data);
   return (
