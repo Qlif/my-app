@@ -3,7 +3,7 @@ import React from 'react';
 
 function Footer (){
   return (
-  <footer>Some footer </footer>)
+  <footer className = "Footer">Some footer </footer>)
 }
 
 export default Footer;

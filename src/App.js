@@ -29,11 +29,15 @@ useEffect(()=> {
 }, []);
 //console.log(data);
   return (
-    <div className="App">
-      <Header />
-      <Main data= {data} getData={resivData} />
-      <Footer />
-    </div>
+        <>
+          <div className="App">
+            <Header />
+              <div className = "Content">
+                <Main data= {data} getData={resivData} />
+              </div>
+            <Footer />
+          </div>
+        </>
   );
 }
 

@@ -1,8 +1,12 @@
 //Core
 import React, {useState, useRef}   from 'react';
 import PropTypes from 'prop-types';
-//components
+import cx from 'classnames'
+//Components
 import ButtonEdit from '../actions/EditButton.js';
+import ButtonDelete from '../actions/ButtonDelete.js';
+//Style
+import './TodoListItem.css';
 
 function TodoListItem(props) {
   const { item, getData  } = props;
@@ -13,18 +17,24 @@ function TodoListItem(props) {
     setEditId(ev.target.id);
   };
 
-  if(item.id == editid){
+  if(item.id === parseInt(editid,10)){
     return  (
               <ButtonEdit item = {item} setEditId = {setEditId} inputEl={inputEl} getData={getData} />
     )
   } else {
 
-    return <>
-              {item.title} Status : {(item.stat === true ? "Done" : "Not done")}
+    return (
+            <>
+            <span className = {cx({Done : item.stat})}>
+              {item.title}
+              </span>
               <button id = {item.id} onClick = {handleonClikEdit}>
                 Edit
               </button>
+              <ButtonDelete delid = {item.id} getData={getData} />
             </>
+            )
+
    }
 }
 export default TodoListItem;

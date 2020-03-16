@@ -31,6 +31,7 @@ const handleonClikStatus = e => {
 
   return(
     <form onSubmit={onFormAddSubmit}>
+      <label>Add to do </label>
       <input type = "text" value={title} onChange ={handleChangeUsername}  />
       <input type = "checkbox"
              id="satus"
@@ -38,7 +39,7 @@ const handleonClikStatus = e => {
              onChange ={handleonClikStatus}
       />
       <label> Done </label>
-      <button type = "submit"> Send </button>
+      <button type = "submit"> Add </button>
     </form>
   );
 }
