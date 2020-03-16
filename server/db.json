@@ -1,0 +1,39 @@
+{
+  "posts": [
+    {
+      "title": "Install json-server",
+      "stat": true,
+      "id": 1
+    },
+    {
+      "title": "Taste Callback hell",
+      "stat": false,
+      "id": 2
+    },
+    {
+      "title": "Try to not crye",
+      "stat": false,
+      "id": 4
+    },
+    {
+      "title": "22222222222222222222",
+      "stat": true,
+      "id": 5
+    },
+    {
+      "title": "sgdhjjjjkkkkk3333",
+      "stat": true,
+      "id": 6
+    },
+    {
+      "title": "test2ethejtjdtjtjrtjrtjrt",
+      "stat": false,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "title": "aghsrhsrhsrh",
+      "stat": true
+    }
+  ]
+}
