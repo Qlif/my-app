@@ -44,6 +44,20 @@ class Api {
           })
 
   }
+
+//Action EditButton
+  putRequest(id, title, status){
+        return this.http.put('/posts/'+id, {
+            title : title,
+            stat : status
+           })
+           .then(function (response) {
+
+           })
+           .catch(function (error) {
+             console.log(error);
+           })
+  }
 }
 
 export default Api.getInstance();

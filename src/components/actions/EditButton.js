@@ -1,65 +1,60 @@
 //Core
-import React, {useState} from 'react';
-import ReactDOM from 'react-dom';
-import Modal from 'react-modal';
+import React, {useState, useEffect} from 'react';
 //Api
 import Api from '../../engine/services/api/index.js';
 
-const customStyles = {
-  content : {
-    top                   : '50%',
-    left                  : '50%',
-    right                 : 'auto',
-    bottom                : 'auto',
-    marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
-  }
-};
 
-Modal.setAppElement('#root')
 
 function ButtonEdit (props){
+const { item, setEditId, inputEl, getData } = props;
+const [status, setSatus] = useState(item.stat);
+const [title, setTitle] = useState(item.title);
 
-  const [itemtitle, setItemTitle] = useState(props.itemtitle);
-  const [satus, setSatus] = useState(props.stat)
-  var subtitle;
 
-  const [modalIsOpen,setIsOpen] = useState(false);
+const handleonClikCancel = ev =>{
+  setEditId('');
+}
 
-  function openModal() {
-    setIsOpen(true);
-  }
+const handleonClikStatus = ev => {
+      setSatus(ev.target.checked);
+  };
 
-  function afterOpenModal() {
+const handleonChangeInput = ev =>{
+      setTitle(ev.target.value);
+}
 
-  }
+const onFormEditSubmit = ev => {
+    ev.preventDefault();
+    Api.putRequest(item.id, title, status)
+    .then(() => Api.getRequest())
+    .then((res) => {
+      getData(res.data);
+    });
+  setEditId('');
+}
 
-  function closeModal(){
-    setIsOpen(false);
-  }
-
-  const handleonClikStatus = e => {
-      setSatus(true)
-      }
+useEffect(()=>inputEl.current.focus());
 
     return (
-      <div>
-        <button onClick={openModal}>Edit</button>
-        <Modal
-          isOpen={modalIsOpen}
-          onAfterOpen={afterOpenModal}
-          onRequestClose={closeModal}
-          style={customStyles}
-          contentLabel="Example Modal"
-        >
-
-          <input type = "text" value = {itemtitle} />
-          <input type = "checkbox" id="satus" name="satus" cheked />
-          <button onClick = "">Apply</button>
-          <button onClick={closeModal}>Cancel</button>
-
-        </Modal>
-      </div>
+      <>
+      <form onSubmit={onFormEditSubmit}>
+        <input type = "text"
+               defaultValue = {title}
+               ref={inputEl}
+               onChange ={handleonChangeInput}
+        />
+        <input type = "checkbox"
+               id="satus"
+               name="satus"
+               onChange ={handleonClikStatus}
+               checked={status}
+        />
+        <input type = "submit" value = "Update" />
+        <input type = "button" value = "Cancel"
+               onClick = {handleonClikCancel}
+        />
+      </form>
+      </>
     );
 }
 export default ButtonEdit;

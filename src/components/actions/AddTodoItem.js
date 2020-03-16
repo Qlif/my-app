@@ -18,7 +18,7 @@ const handleonClikStatus = e => {
       setSatus(e.target.checked);
   };
 
- const onFormSubmit = ev => {
+ const onFormAddSubmit = ev => {
     ev.preventDefault();
     Api.postRequest(title, satus)
       .then(() => Api.getRequest())
@@ -30,7 +30,7 @@ const handleonClikStatus = e => {
  }
 
   return(
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormAddSubmit}>
       <input type = "text" value={title} onChange ={handleChangeUsername}  />
       <input type = "checkbox"
              id="satus"
