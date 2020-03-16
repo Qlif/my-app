@@ -16,7 +16,8 @@ function Main (props){
 }
 
 Todolist.propTypes = {
-  value: PropTypes.array
+  data: PropTypes.array,
+  getData: PropTypes.func
 };
 
 export default Main;

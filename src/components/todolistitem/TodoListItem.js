@@ -34,7 +34,15 @@ function TodoListItem(props) {
               <ButtonDelete delid = {item.id} getData={getData} />
             </>
             )
-
    }
 }
+TodoListItem.propTypes = {
+  item: PropTypes.arrayOf( PropTypes.shape({
+    id : PropTypes.nuber,
+    title: PropTypes.string,
+    stat: PropTypes.boolean
+  })),
+  getData: PropTypes.func
+};
+
 export default TodoListItem;
