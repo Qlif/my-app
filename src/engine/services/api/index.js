@@ -58,6 +58,16 @@ class Api {
              console.log(error);
            })
   }
+  //Get Todoitems Done
+    getDone(){
+      return this.http.get('/posts?stat=true');
+    }
+
+    //Get Todoitems NotDone
+
+    getNotDone(){
+        return this.http.get('/posts?stat=false');
+    }
 }
 
 export default Api.getInstance();
