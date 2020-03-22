@@ -5,7 +5,7 @@ const initialState = {
     list:[]
 };
 
-export function todosReduser(state = initialState, action) {
+export function todosReducer(state = initialState, action) {
     const {type, payload} = action;
     switch (type) {
         case SET_TODO_LIST_DATA:{

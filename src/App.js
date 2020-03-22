@@ -6,16 +6,21 @@ import {
     Route,
     Link
 } from "react-router-dom";
+import { Provider, useDispatch, useSelector } from "react-redux";
 //Style
 import './App.css';
 //Components
 import Header from './components/header/Header.js';
 import Footer from './components/footer/Footer.js';
 import Main from './components/main/Main.js';
+//Store
+import { store } from "./engine/init/store";
 
 function App() {
+    const dispatch = store.dispatch;
+
   return (
-        <>
+        <Provider store={store}>
           <div className="App">
             <Header />
               <Router>
@@ -51,7 +56,7 @@ function App() {
               </Router>
             <Footer />
           </div>
-        </>
+        </Provider>
   );
 }
 

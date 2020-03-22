@@ -2,10 +2,10 @@
 import { combineReducers } from "redux";
 
 //Reducer
-import { todosReduser } from "../../core/todos/reducer";
+import { todosReducer } from "../../core/todos/reducer";
 
 const rootReduser = () =>combineReducers({
-    todos: todosReduser,
+    todos: todosReducer,
 });
 
 export { rootReduser };
